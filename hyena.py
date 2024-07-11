@@ -49,6 +49,12 @@ elif st.session_state['machine'] == "バイオヴィレッジ":
     village.village()
 elif st.session_state['machine'] == "マクロスF4":
     macrossf4.macrossf4()
+elif st.session_state['machine'] == "番長4":
+    bancho4.bancho4()
+elif st.session_state['machine'] == "チバリヨ2":
+    chibariyo2.chibariyo2()
+elif st.session_state['machine'] == "防振り":
+    bofuri.bofuri()
 else:
     st.header("工事中...")
 
