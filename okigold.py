@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 def okidoki_gold():
     st.header("沖ドキGOLD")

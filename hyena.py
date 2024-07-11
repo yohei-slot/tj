@@ -1,21 +1,21 @@
 import streamlit as st
-import yoshimune_rising
-import chibariyo2
 import hokuto
 import okigold
 import tenzen
 import vvv
+import chibariyo2
+import bancho4
+import bofuri
+import yoshimune_rising
 import niku
 import monkeyv
 import village
 import macrossf4
-import bancho4
-import bofuri
 
 st.title("ハイエナボーダーメモ")
 machine = st.selectbox(
     '機種を選択',
-    ('機種を選択','L北斗の拳', '沖ドキGOLD', '絆2天膳',  "チバリヨ2",  "番長4", 'ヴァルヴレイヴ', "防振り",'Lキン肉マン', "モンキーターンV", "バイオヴィレッジ", "マクロスF4", '吉宗RISING')
+    ('機種を選択','L北斗の拳', '沖ドキGOLD', '絆2天膳', 'ヴァルヴレイヴ', 'チバリヨ2', '番長4', '防振り', '吉宗RISING',  'Lキン肉マン', "モンキーターンV", "バイオヴィレッジ", "マクロスF4")
 )
 
 st.session_state['machine'] = machine
@@ -49,12 +49,6 @@ elif st.session_state['machine'] == "バイオヴィレッジ":
     village.village()
 elif st.session_state['machine'] == "マクロスF4":
     macrossf4.macrossf4()
-elif st.session_state['machine'] == "チバリヨ2":
-    chibariyo2.chibariyo2()
-elif st.session_state['machine'] == "番長4":
-    bancho4.bancho4()
-elif st.session_state['machine'] == "防振り":
-    bofuri.bofuri()
 else:
     st.header("工事中...")
 
