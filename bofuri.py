@@ -49,6 +49,7 @@ def bofuri():
 	st.caption('防御レベルが2以下且つ演出が弱ければ50Gでやめても良し。演出の詳細については下記ボタン先の"状態示唆"項目を参照。')
 	st.link_button('演出情報','https://www.slopachi-quest.com/article/bouhuri-tenjou/#i-17')
 	
-	
+	st.divider()
+	st.caption("L防振り FN、AT、純増5.5枚/G、天井：950G+α")
 		
 		

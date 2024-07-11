@@ -38,4 +38,4 @@ def hokuto():
     """)
 
     st.divider()
-    st.caption("L北斗の拳、AT、純増4枚/G、天井1268G+α、リセット天井800G+α")
+    st.caption("L北斗の拳 AD XR、AT、純増4枚/G、天井1268G+α、リセット天井800G+α")

@@ -137,4 +137,4 @@ def okidoki_gold():
         """)
 
     st.divider()
-    st.caption("S沖ドキGOLD-30、6.5号機、AT、純増3枚/G、天井999G+α")
+    st.caption("S/沖ドキGOLD/LS、AT、純増3枚/G、天井999G+α")

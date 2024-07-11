@@ -33,4 +33,4 @@ def niku():
                 """)
     
     st.divider()
-    st.caption("Lキン肉マン 7人の悪魔超人編、AT、純増6.1枚/G、天井液晶900G+α")
+    st.caption("Lパチスロキンニクマン 4SLDC、AT、純増6.1枚/G、天井液晶900G+α")

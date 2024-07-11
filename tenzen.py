@@ -143,4 +143,4 @@ def tenzen():
                 """)
     
     st.divider()
-    st.caption("Lバジリスク甲賀忍法帖 絆2 天膳BLACK EDITION、AT、純増2.9枚/G、BC天井333G+α、BT天井 BC8回")
+    st.caption("L/バジリスク絆2～天膳～/ZN、AT、純増2.9枚/G、BC天井333G+α、BT天井 BC8回")

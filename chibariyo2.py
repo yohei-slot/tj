@@ -79,6 +79,7 @@ def chibariyo2():
     st.write("・チャンスAやチャンスBが確定する聴牌ボイスや特殊チカリが出た場合は天国まで打ちましょう。")
     st.link_button("演出情報", "https://chonborista.com/slot/net-slot/205860/")
         
-        
+    st.divider()
+    st.caption("Lチバリヨ2 ZB、AT、純増3or4.5枚/G、G数天井999G+α（設定変更時600G+α）、チェリー回数天井45回")
 
         

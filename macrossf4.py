@@ -53,6 +53,6 @@ def macrossf4():
                 """)
     
     st.divider()
-    st.caption("Lマクロスフロンティア4、AT、純増1.5枚/G or 5枚/G")
+    st.caption("Lマクロスフロンティア4 bA、AT、純増1.5枚/G or 5枚/G")
     st.caption("天井:液晶1500G+α or 実ゲーム1000G+α、歌姫ボーナス11回目")
 

@@ -21,4 +21,4 @@ def village():
                 """)
     
     st.divider()
-    st.caption("Lバイオハザード ヴィレッジ、AT、純増2.5枚/G、天井750G+α")
+    st.caption("Lバイオハザード ヴィレッジ XA、AT、純増2.5枚/G、天井750G+α")
