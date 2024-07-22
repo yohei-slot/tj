@@ -1,4 +1,5 @@
 import streamlit as st
+from display import tjz
 
 def bancho4():
 	st.title('スマスロ 押忍！番長4')
@@ -96,7 +97,8 @@ def bancho4():
 		elif samai < -2000:
 			t = t + 20
 		
-		st.subheader(f'天井狙い {t}G〜')
+		with st.container(border=True):
+			tjz(t)
 		
 		
 	st.divider()

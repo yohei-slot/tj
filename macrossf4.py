@@ -1,7 +1,9 @@
 import streamlit as st
+from display import tjz
 
 def macrossf4():
     st.header("スマスロ マクロスフロンティア4")
+    st.markdown("**狙い目はすべて液晶のG数！**")
     st.write("このページでは、内部G数が実G数の1.5倍になるものとして算出した狙い目を表示します。もし打ち込んでいる人で、1.5倍ではないと思う方は下の欄を修正して利用してください。")
     factor = st.number_input("内部G数加算率（デフォルト1.5倍）", 1.0, 3.0, step=0.01, value=1.5, help="分からなければ触らなくてok")
     morning = st.checkbox("朝一リセット", value=False, help="朝一0スルーは甘い、1・2スルーは辛い")
@@ -22,9 +24,9 @@ def macrossf4():
         else:
             g = 0
 
-        st.subheader(f"液晶 {int(g)}G~ 天井まで")
-        st.subheader("液晶 480G～500Gのゾーン狙い 前兆終了まで")
-        st.caption("500Gのゾーンで前兆が来なければ良いモードなのでそのまま天井まで")
+        with st.container(border=True):
+            tjz(g,z1=480,z2=500)
+            st.caption("500Gのゾーンで前兆が来なければ良いモードなのでそのまま天井まで")
 
     else:
         if thru == 0:
@@ -42,7 +44,8 @@ def macrossf4():
         else:
             g = 0
 
-        st.subheader(f"液晶 {int(g)}G~ 天井まで")
+        with st.container(border=True):
+            tjz(g)
 
     st.divider()
 

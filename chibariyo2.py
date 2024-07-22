@@ -1,4 +1,5 @@
 import streamlit as st
+from display import tjz
 
 def chibariyo2():
     st.title("スマスロ チバリヨ２")
@@ -7,16 +8,14 @@ def chibariyo2():
     st.caption("1G連は天国じゃないものとする")
     if morning:
         if thru < 7:
-            zone = [0,240,240,220,210,200,200]
+            zone = [False,240,240,220,210,200,200]
             tenjo = [70,730,680,640,650,600,500]
-            if thru == 0:
-                st.subheader(f'天井狙い {tenjo[thru]}G~')
-            else:
-                st.subheader(f'ゾーン狙い{zone[thru]}~360G')
-                st.subheader(f'天井狙い {tenjo[thru]}G~')
+            with st.container(border=True):
+                tjz(tenjo[thru],z1=zone[thru],z2=360)        
         else:
-            st.subheader("天国まで全ツ")
-            st.caption("閉店時間（最低５時間）と持ちメダルには余裕をもって！（スルー回数天井はないです）")
+            with st.container(border=True):
+                st.subheader("天国まで全ツ")
+                st.caption("閉店時間（最低５時間）と持ちメダルには余裕をもって！（スルー回数天井はないです）")
 
     else:
         if thru == 0:
@@ -36,13 +35,13 @@ def chibariyo2():
             else:
                 t0 = 720
             
-            st.subheader(f'ゾーン狙い {z0}~360G')
-            st.subheader(f'天井狙い {t0}G~')
-
+            with st.container(border=True):
+                tjz(t0,z1=z0,z2=360)
         
         elif thru == 6:
-            st.subheader("天国まで全ツ")
-            st.caption("閉店時間（最低５時間）と持ちメダルには余裕をもって！（スルー回数天井はないです）")
+            with st.container(border=True):
+                st.subheader("天国まで全ツ")
+                st.caption("閉店時間（最低５時間）と持ちメダルには余裕をもって！（スルー回数天井はないです）")
 
         elif thru == 1 or thru == 2:
             zenkai = st.checkbox("前回、34～130Gあるいは320～360Gで当選の場合チェック", value=False)
@@ -60,16 +59,17 @@ def chibariyo2():
                 else:
                     z0 = 200
                     t0 = 650
-            st.subheader(f'ゾーン狙い {z0}~360G')
-            st.subheader(f'天井狙い {t0}G~')
+
+            with st.container(border=True):
+                tjz(t0,z1=z0,z2=360)
 
         else:
             ztable = [190,100,100]
             ttable = [580,540,500]
             z0 = ztable[thru-3]
             t0 = ttable[thru-3]
-            st.subheader(f'ゾーン狙い {z0}~360G')
-            st.subheader(f'天井狙い {t0}G~')
+            with st.container(border=True):
+                tjz(t0,z1=z0,z2=360)
 
     st.divider()
     st.header("その他")

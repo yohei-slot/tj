@@ -1,13 +1,20 @@
 import streamlit as st
+from display import tjz
 
 def village(): 
     st.header("スマスロ バイオハザード:ヴィレッジ")
     morning = st.checkbox("朝一リセット", value=False, help="設定変更後は天井550Gに短縮")
     if morning:
-        st.subheader("天井狙い 70G～")
+        t = 70
+        z1=False
+        z2=False
     else:
-        st.subheader("天井狙い 390G～")
-        st.subheader("ゾーン狙い 85G～150G（前兆まで）")
+        t = 390
+        z1 = 85
+        z2 = 150
+    with st.container(border=True):
+        tjz(t,z1=z1,z2=z2)
+
 
     st.divider()
 

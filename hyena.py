@@ -11,11 +11,12 @@ import niku
 import monkeyv
 import village
 import macrossf4
+#import tolove
 
 st.title("ハイエナボーダーメモ")
 machine = st.selectbox(
     '機種を選択',
-    ('機種を選択','L北斗の拳', '沖ドキGOLD', '絆2天膳', 'ヴァルヴレイヴ', 'チバリヨ2', '番長4', '防振り', '吉宗RISING',  'Lキン肉マン', "モンキーターンV", "バイオヴィレッジ", "マクロスF4")
+    ('機種を選択','L北斗の拳', '沖ドキGOLD', '絆2天膳', 'ヴァルヴレイヴ', 'チバリヨ2', '番長4', '防振り', 'ToLOVEる', '吉宗RISING',  'Lキン肉マン', "モンキーターンV", "バイオヴィレッジ", "マクロスF4")
 )
 
 st.session_state['machine'] = machine
@@ -23,7 +24,7 @@ st.session_state['machine'] = machine
 def home():
     st.markdown("""
     ## 注意事項
-    ＊このサイトの狙い目は全て20円等価交換105%ボーダーです。 \n
+    ＊このサイトの狙い目は全て等価交換105%ボーダーです。 \n
     ＊閉店減算は考慮されていません。 \n
     ＊作者が収集したデータを基に、独自に算出した狙い目です。参考にする際は自己責任で。
     """)
@@ -55,6 +56,8 @@ elif st.session_state['machine'] == "チバリヨ2":
     chibariyo2.chibariyo2()
 elif st.session_state['machine'] == "防振り":
     bofuri.bofuri()
+elif st.session_state['machine'] == "ToLOVEる":
+    tolove.tolove()
 else:
     st.header("工事中...")
 

@@ -1,4 +1,5 @@
 import streamlit as st
+from display import tjz
 
 def hokuto():
     st.header("スマスロ北斗の拳")
@@ -8,25 +9,26 @@ def hokuto():
         if before == "799枚以下":
             samai = st.slider("直近1600G差枚", -1500, 1500, 0, 1)
             neraime = int(samai*0.1158+490)
-            st.subheader(f"狙い目は {neraime}G")
+            
 
         elif before == "800枚〜1299枚":
             st.write("＊直近の差枚がマイナスでも、前回ATで一撃大量獲得した場合は辛くなります \n \n")
-            st.subheader("狙い目は 600G")
+            neraime = 600
         
         elif before == "1300枚以上":
             st.write("＊直近の差枚がマイナスでも、前回ATで一撃大量獲得した場合は辛くなります \n \n")
-            st.subheader("狙い目は 650G")
+            neraime = 650
 
     elif reset == "朝一":
         st.write("＊リセット時は天井が800G+前兆に短縮 \n \n")
-        st.subheader("狙い目は 80G")
+        neraime = 80
 
     elif reset == "朝二":
         st.write("＊朝二はデータ上甘めになっています。 \n \n")
         samai = st.slider("前回差枚", -750, 1000, 0, 1)
         neraime = int(samai*0.2312+400)
-        st.subheader(f"狙い目は{neraime}G")
+    with st.container(border=True):
+        tjz(neraime)
     st.write("\n")
     st.write("\n")
 

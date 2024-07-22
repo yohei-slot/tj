@@ -1,12 +1,13 @@
 import streamlit as st
-
+from display import tjz
 
 def bofuri():
 	st.title('スマスロ 痛いのは嫌なので防御力に極振りしたいと思います')
 	morning = st.checkbox('朝イチ',value=False)
 	if morning:
-		st.subheader('天井狙い 200G〜')
-		st.subheader('駆け抜け後 240〜')
+		with st.container(border=True):
+			tjz(200)
+			tjz(240, ttext="駆け抜け後")
 		st.caption('朝イチから連チャンするまでは、天井短縮状態がずっと続く')
 	else:
 		samai = st.slider('有利差枚(大体でおk)', -2000,1500,0,100)
@@ -33,14 +34,18 @@ def bofuri():
 			t = t + 10
 		if hakaio:
 			t = t - 100
-		st.subheader(f'天井狙い {t}G〜')
 		if z150 != 'nan':
 			if hakaio:
 				z150 = z150 - 20
-			st.subheader(f'150のゾーン狙い {z150}〜150G')
+		else:
+			z150 = False
 		if hakaio:
 			z300 = z300 - 20
-		st.subheader(f'300のゾーン狙い{z300}〜300G')
+
+		with st.container(border=True):
+			tjz(t)
+			tjz(t=False,z1=z150,z2=150,ztext="150のゾーン狙い")
+			tjz(t=False,z1=z300,z2=300,ztext="300のゾーン狙い")
 	
 		
 	st.divider()

@@ -1,6 +1,21 @@
 import streamlit as st
+from display import tjz
 
 def tenzen():
+    st.markdown("""
+                <style>
+                .big-font{
+                    font-size:50px !important;
+                    background: linear-gradient(to right,#e60000,#f39800,#fff100,#009944,#0068b7,#1d2088,#920783);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-weight: bold;
+                    display: inline-block;
+                }
+                </style>
+                """, unsafe_allow_html=True)
+    
+
     st.header("バジリスク絆2 天膳BLACK")
     st.write("""有利切れの恩恵が強い台なので、有利差枚が浮いている台ほど期待値が高くなります。
              有利区間切れ条件は、有利差枚+1000枚以上です。穢れ契機の宿怨チャレンジでは切れないものと予想されます。
@@ -13,7 +28,8 @@ def tenzen():
     shukuen = st.radio("当該有利区間にて、穢れ契機による宿怨チャレンジ履歴が", options=("あり","なし" ))
     if morning == "朝一以外":
         if thru == 4:
-            st.subheader("BT当選まで全ツ!")
+            with st.container(border=True):
+                st.markdown('<p class="big-font">BT当選まで全ツ!</p>')
         
         elif thru == 0:
             if shukuen == "あり":
@@ -23,7 +39,7 @@ def tenzen():
                     g = 270
                 if g <= 0:
                     g = 0
-                st.subheader(f"狙い目は: {int(g)}G")
+                
 
             elif shukuen == "なし":
                 diff = st.slider("有利差枚(前回BC終了時時点)", 0,1000,0,1)
@@ -32,7 +48,7 @@ def tenzen():
                     g = 250
                 if g < 0:
                     g = 0
-                st.subheader(f"狙い目は: {int(g)}G")
+                
 
 
         elif thru == 1:
@@ -45,7 +61,7 @@ def tenzen():
                 elif g >= 333:
                     g = 333
                 
-                st.subheader(f"狙い目は: {int(g)}G")
+                
 
             elif shukuen == "なし":
                 samai = st.slider("有利差枚(前回BC終了時時点)", -4500,1000,0,1)
@@ -56,7 +72,7 @@ def tenzen():
                 elif g >= 333:
                     g = 333
                 
-                st.subheader(f"狙い目は: {int(g)}G")
+                
 
         elif thru == 2:
             if shukuen == "あり":
@@ -68,7 +84,7 @@ def tenzen():
                 elif g >= 333:
                     g = 333
                 
-                st.subheader(f"狙い目は: {int(g)}G")
+                
 
             elif shukuen == "なし":
                 samai = st.slider("有利差枚(前回BC終了時時点)", -4500,1000,0,1)
@@ -79,7 +95,7 @@ def tenzen():
                 elif g >= 333:
                     g = 333
 
-                st.subheader(f"狙い目は: {int(g)}G")
+             
 
         elif thru == 3:
             if shukuen == "あり":
@@ -91,7 +107,7 @@ def tenzen():
                 elif g >= 333:
                     g = 333
 
-                st.subheader(f"狙い目は: {int(g)}G")
+               
 
             elif shukuen == "なし":
                 samai = st.slider("有利差枚(前回BC終了時時点)", -4500,1000,0,1)
@@ -105,11 +121,12 @@ def tenzen():
                     if g > 100:
                         g = 100
 
-                st.subheader(f"狙い目は: {int(g)}G")
+                
 
     elif morning == "朝一":
         if thru == 0:
-            st.subheader("狙い目は: 260G")
+            g = 260
+        
 
         elif thru == 1:
             btg = st.slider("BT間G数(前回BC終了時時点)", 0,333,0,1)
@@ -119,7 +136,7 @@ def tenzen():
             elif g >= 333:
                 g = 333
         
-            st.subheader(f"狙い目は: {int(g)}G")
+
 
         elif thru == 2:
             btg = st.slider("BT間G数(前回BC終了時時点)", 0,666,0,1)
@@ -129,7 +146,9 @@ def tenzen():
             elif g >= 333:
                 g = 333
             
-            st.subheader(f"狙い目は: {int(g)}G")
+    with st.container(border=True):
+        tjz(g)
+
 
     st.divider()
 
