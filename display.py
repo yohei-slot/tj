@@ -18,7 +18,7 @@ def zentz(text=""):
 
 
 
-def tjz(t,ttext="天井狙い",z1=False,z2=False, ztext="ゾーン狙い"):
+def tjz(t=None,ttext="天井狙い",z1=False,z2=False, ztext="ゾーン狙い"):
     st.markdown("""
                 <style>
                 .big-font{
