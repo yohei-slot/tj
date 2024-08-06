@@ -1,5 +1,6 @@
 import streamlit as st
 from display import tjz
+from display import zentz
 
 def tenzen():
     st.markdown("""
@@ -39,6 +40,7 @@ def tenzen():
                     g = 270
                 if g <= 0:
                     g = 0
+                print(g)
                 
 
             elif shukuen == "なし":
@@ -147,7 +149,11 @@ def tenzen():
                 g = 333
             
     with st.container(border=True):
-        tjz(g)
+        if g > 0:
+            tjz(int(g))
+        else:
+            zentz()
+            print("fire")
 
 
     st.divider()

@@ -44,8 +44,8 @@ def bofuri():
 
 		with st.container(border=True):
 			tjz(t)
-			tjz(t=False,z1=z150,z2=150,ztext="150のゾーン狙い")
-			tjz(t=False,z1=z300,z2=300,ztext="300のゾーン狙い")
+			tjz(t=None,z1=z150,z2=150,ztext="150のゾーン狙い")
+			tjz(t=None,z1=z300,z2=300,ztext="300のゾーン狙い")
 	
 		
 	st.divider()

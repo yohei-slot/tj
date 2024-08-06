@@ -1,4 +1,6 @@
 import streamlit as st
+from display import tjz
+from display import zentz
 
 def vvv():
     st.header("L 革命機ヴァルヴレイヴ")
@@ -8,11 +10,10 @@ def vvv():
     czthru = st.radio("CZスルー回数", options=(0,1,2,3,4), index=0, horizontal=True)
     ekisho = st.slider("液晶G数", 0,1000,0,1)
     if not mimizu:
-
         if rbthru == 0:
             st.write("CZ・ボナ・ATまで打ったのち押し引き")
             if czthru == 0:
-                st.subheader("液晶 510G～")
+                eg = 510
             elif czthru == 1:
                 if ekisho <= 300:
                     g = -0.33*ekisho+900
@@ -42,128 +43,144 @@ def vvv():
 
             else:
                 g = 0
-
-            if czthru != 0:
-                st.subheader(f"ボーナス間 {int(g)}G～")
+            
+            with st.container(border=True):
+                if czthru == 0:
+                    tjz(t=eg,ttext="液晶 ")
+                elif g == 0:
+                    zentz()
+                else:
+                    tjz(t=int(g),ttext="ボーナス間 ")
 
         elif rbthru == 1:
             st.write("CZ・ボナ・ATまで打ったのち押し引き")
             zerocz = st.radio("0スルー時のCZ回数", options=(1,2,3,4,5), index=0, horizontal=True)
-            if zerocz == 1:
-                if czthru == 0:
-                    st.subheader("液晶 320G～")
-                elif czthru == 1:
-                    g = -4.4444*ekisho + 800
-                    if g < 0:
-                        g = 0
-                    elif g > 1000:
-                        g = 1000
-                    st.subheader(f"ボーナス間 {int(g)}G～")
-                elif czthru == 2:
-                    g = -4.375*ekisho + 700
-                    if g < 0:
-                        g = 0
-                    elif g > 1000:
-                        g = 1000
-                    st.subheader(f"ボーナス間 {int(g)}G～")
-                elif czthru == 3:
-                    st.subheader("ツッパ")
-            elif zerocz == 2:
-                if czthru == 0:
-                    st.subheader("液晶 200G～")
-                elif czthru == 1:
-                    g = -4.375*ekisho + 700
-                    if g < 0:
-                        g = 0
-                    elif g > 1000:
-                        g = 1000
-                    st.subheader(f"ボーナス間 {int(g)}G～")
-                elif czthru == 2:
-                    g = -10*ekisho + 700
-                    if g < 0:
-                        g = 0
-                    elif g > 1000:
-                        g = 1000
-                    st.subheader(f"ボーナス間 {int(g)}G～")
-                elif czthru == 3:
-                    st.subheader("ツッパ")
-            elif zerocz == 3:
-                if czthru == 0:
-                    st.subheader("液晶 180G～")
-                elif czthru == 1:
-                    g = -7*ekisho + 700
-                    if g < 0:
-                        g = 0
-                    elif g > 1000:
-                        g = 1000
-                    st.subheader(f"ボーナス間 {int(g)}G～")
-                elif czthru >= 2:
-                    st.subheader("ツッパ")
-            elif zerocz == 4:
-                if czthru == 0:
-                    st.subheader("液晶 50G～")
+            with st.container(border=True):
+                if zerocz == 1:
+                    if czthru == 0:
+                        eg = 320
+                        tjz(t=eg,ttext="液晶 ")
+                    elif czthru == 1:
+                        g = -4.4444*ekisho + 800
+                        if g < 0:
+                            g = 0
+                        elif g > 1000:
+                            g = 1000
+                        tjz(t=int(g),ttext="ボーナス間 ")
+                    elif czthru == 2:
+                        g = -4.375*ekisho + 700
+                        if g < 0:
+                            g = 0
+                        elif g > 1000:
+                            g = 1000
+                        tjz(t=int(g),ttext="ボーナス間 ")
+                    elif czthru == 3:
+                        zentz()
+                elif zerocz == 2:
+                    if czthru == 0:
+                        eg = 200
+                        tjz(t=eg,ttext="液晶 ")
+                    elif czthru == 1:
+                        g = -4.375*ekisho + 700
+                        if g < 0:
+                            g = 0
+                        elif g > 1000:
+                            g = 1000
+                        tjz(t=int(g),ttext="ボーナス間 ")
+                    elif czthru == 2:
+                        g = -10*ekisho + 700
+                        if g < 0:
+                            g = 0
+                        elif g > 1000:
+                            g = 1000
+                        tjz(t=int(g),ttext="ボーナス間 ")
+                    elif czthru == 3:
+                        zentz()
+                elif zerocz == 3:
+                    if czthru == 0:
+                        eg = 180
+                        tjz(t=eg,ttext="液晶 ")
+                    elif czthru == 1:
+                        g = -7*ekisho + 700
+                        if g < 0:
+                            g = 0
+                        elif g > 1000:
+                            g = 1000
+                        tjz(t=int(g),ttext="ボーナス間 ")
+                    elif czthru >= 2:
+                        zentz()
+                elif zerocz == 4:
+                    if czthru == 0:
+                        eg = 50
+                        tjz(t=eg,ttext="液晶 ")
+                    else:
+                        zentz()
                 else:
-                    st.subheader("ツッパ")
-            else:
-                st.subheader("ツッパ")
+                    zentz()
 
         elif rbthru == 2:
             zerocz = st.radio("0、１スルー時のCZ回数合計", options=(2,3,4), index=0, horizontal=True)
-            if zerocz == 2:
-                if czthru == 0:
-                    g = -3.5*ekisho + 700
-                    if g < 0:
-                        g = 0
-                    elif g > 1000:
-                        g = 1000
-                    st.subheader(f"ボーナス間 {int(g)}G～")
-                elif czthru == 1:
-                    g = -8.5714*ekisho + 600
-                    if g < 0:
-                        g = 0
-                    elif g > 1000:
-                        g = 1000
-                    st.subheader(f"ボーナス間 {int(g)}G～")
-                else:
-                    st.subheader("ツッパ")
+            with st.container(border=True):
+                if zerocz == 2:
+                    if czthru == 0:
+                        g = -3.5*ekisho + 700
+                        if g < 0:
+                            g = 0
+                        elif g > 1000:
+                            g = 1000
+                        tjz(t=int(g),ttext="ボーナス間 ")
+                    elif czthru == 1:
+                        g = -8.5714*ekisho + 600
+                        if g < 0:
+                            g = 0
+                        elif g > 1000:
+                            g = 1000
+                        tjz(t=int(g),ttext="ボーナス間 ")
+                    else:
+                        zentz()
 
-            elif zerocz == 3:
-                if czthru == 0:
-                    g = -8.125*ekisho + 650
-                    if g < 0:
-                        g = 0
-                    elif g > 1000:
-                        g = 1000
-                    st.subheader(f"ボーナス間 {int(g)}G～")
-                elif czthru == 1:
-                    g = -12*ekisho + 600
-                    if g < 0:
-                        g = 0
-                    elif g > 1000:
-                        g = 1000
-                    st.subheader(f"ボーナス間 {int(g)}G～")
+                elif zerocz == 3:
+                    if czthru == 0:
+                        g = -8.125*ekisho + 650
+                        if g < 0:
+                            g = 0
+                        elif g > 1000:
+                            g = 1000
+                        tjz(t=int(g),ttext="ボーナス間 ")
+                    elif czthru == 1:
+                        g = -12*ekisho + 600
+                        if g < 0:
+                            g = 0
+                        elif g > 1000:
+                            g = 1000
+                        tjz(t=int(g),ttext="ボーナス間 ")
+                    else:
+                        zentz()
                 else:
-                    st.subheader("ツッパ")
-            else:
-                st.subheader("ツッパ")
+                    zentz()
         else:
-            st.subheader("ツッパ")
+            with st.container(border=True):
+                zentz()
     
     elif mimizu:
-        if rbthru == 0:
-            if czthru == 0:
-                st.subheader("液晶 210G～")
-            elif czthru == 1:
-                st.subheader("液晶 70G～")
+        with st.container(border=True):
+            if rbthru == 0:
+                if czthru == 0:
+                    eg = 210
+                    tjz(t=eg,ttext="液晶 ")
+                elif czthru == 1:
+                    eg = 70
+                    tjz(t=eg,ttext="液晶 ")
+                else:
+                    zentz()
+            elif rbthru == 1:
+                if czthru == 0:
+                    eg = 70
+                    tjz(t=eg,ttext="液晶 ")
+                else:
+                    zentz()
             else:
-                st.subheader("ツッパ")
-        elif rbthru == 1:
-            if czthru == 0:
-                st.subheader("液晶 70G～")
-            else:
-                st.subheader("ツッパ")
-        else:
-            st.subheader("ツッパ")
+                zentz()
 
     st.divider()
 

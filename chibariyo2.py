@@ -1,5 +1,6 @@
 import streamlit as st
 from display import tjz
+from display import zentz
 
 def chibariyo2():
     st.title("スマスロ チバリヨ２")
@@ -14,7 +15,7 @@ def chibariyo2():
                 tjz(tenjo[thru],z1=zone[thru],z2=360)        
         else:
             with st.container(border=True):
-                st.subheader("天国まで全ツ")
+                zentz("天国まで全ツ！")
                 st.caption("閉店時間（最低５時間）と持ちメダルには余裕をもって！（スルー回数天井はないです）")
 
     else:
@@ -40,7 +41,7 @@ def chibariyo2():
         
         elif thru == 6:
             with st.container(border=True):
-                st.subheader("天国まで全ツ")
+                zentz("天国まで")
                 st.caption("閉店時間（最低５時間）と持ちメダルには余裕をもって！（スルー回数天井はないです）")
 
         elif thru == 1 or thru == 2:

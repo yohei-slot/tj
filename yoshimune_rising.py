@@ -1,34 +1,36 @@
 #yoshimune_rising.py
 import streamlit as st
+from display import tjz
+from display import zentz
 
 def one_two():
     bonusG = st.slider("ボーナス間G数", 0,800,0,1)
     G = -0.3527*bonusG + 671.1
     if bonusG >= G:
-        st.subheader("ボーナスまで打ち切り")
+        zentz()
     else:
-        st.subheader(f"狙い目: AT間{int(G)}")
+        tjz(G,ttext="狙い目: AT間")
 
 def yoshimune_r():
     st.title("スマスロ　吉宗RISING")
     morning = st.checkbox("朝一", value=False )
     reduce = st.checkbox("天井短縮", value=False, disabled=morning, help="前回AT単発で短縮")
     if morning:
-        st.subheader("狙い目は 220G")
-        st.caption("AT間のG数。ATまで打ち切り")
+        tjz(220, ttext="AT間狙い目")
+        st.caption("ATまで打ち切り")
 
     else:
         if reduce:
-            st.subheader("狙い目は 140G")
-            st.caption("AT間のG数。ATまで打ち切り")
+            tjz(140, ttext="AT間狙い目")
+            st.caption("ATまで打ち切り")
 
         else:
             thru = st.slider("RBスルー回数",0,4,0,1)
             if thru == 0:
-                st.subheader("ゾーン狙い: 85〜250G+前兆")
+                tjz(t=None,z1=85,z2=280,ztext="前兆までカバー、300まで続くこともあるのでやめるタイミングは注意")
                 st.caption("150GのゾーンでRB当選でAT非当選の場合、AT間240Gから拾い直し")
                 st.caption("ゾーン狙いは非短縮時のみ!!")
-                st.subheader("天井狙い: 520G~")
+                tjz(520)
 
             elif thru == 1:
                 one_two()
@@ -40,12 +42,12 @@ def yoshimune_r():
                 bonusG = st.slider("ボーナス間G数", 0,800,0,1)
                 G = -0.3527*bonusG + 671.1
                 if bonusG >= G:
-                    st.subheader("ATまで全ツ!")
+                    zentz()
                 else:
-                    st.subheader(f"狙い目: AT間{int(G)}")
+                    tjz(G,"狙い目：AT間")
 
             elif thru == 4:
-                st.subheader("ATまで全ツ!")
+                zentz()
 
 
     st.divider()

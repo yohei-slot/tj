@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+from display import tjz
+from display import zentz
 
 def okidoki_gold():
     st.header("沖ドキGOLD")
@@ -15,10 +17,9 @@ def okidoki_gold():
     if select == "朝一以外":
         thru = st.slider("スルー回数",0,5,0,1)
         if thru == 0:
-            st.write("狙い目:")
-            st.subheader("700G～（天井狙い）")
-            st.subheader("100～130G（ゾーン狙い）")
-            st.subheader("390～402G（ゾーン狙い）")
+            tjz(700)
+            tjz(z1=100,z2=130)
+            tjz(z1=390,z2=402)
 
         elif thru == 1:
             st.write("有利区間G数：狙い目")
@@ -52,27 +53,25 @@ def okidoki_gold():
             st.subheader("1080G：32G")
 
         elif thru == 5:
-            st.subheader("天国or有利切れまで全ツ！")
+            zentz("天国or有利切れまで")
 
 
 
     elif select == "朝一":
         thru = st.slider("スルー回数",0,5,0,1)
         if thru == 0:
-            st.write("狙い目:")
-            st.subheader("650G～（天井狙い）")
-            st.subheader("0～32G（ゾーン狙い）")
-            st.subheader("100～130G（ゾーン狙い）")
-            st.subheader("360～403G（ゾーン狙い）")
+            tjz(650)
+            tjz(z1=0,z2=32)
+            tjz(z1=100,z2=130)
+            tjz(z1=360,z2=403)
+
         
         elif thru == 1:
             gbefore = st.radio("0スの当選G数", options=("32G以下", "33～149G", "150G以上"), index=0, horizontal=True)
             if gbefore == "32G以下":
-                st.write("狙い目:")
-                st.subheader("420G")      
+                tjz(420)    
             elif gbefore == "33～149G":
-                st.write("狙い目:")
-                st.subheader("440G")
+                tjz(440)
             elif gbefore == "150G以上":
                 st.write("有利区間G数：狙い目")
                 st.subheader("不問：510G")
@@ -119,7 +118,7 @@ def okidoki_gold():
             st.subheader("900G：32G")
         
         elif thru == 5:
-            st.subheader("天国or有利切れまで全ツ！")
+            zentz("天国or有利切れまで")
        
     elif select == "マタギ狙い":
         matagi = st.text_input("33G以上は0, 32以下は1で入力。", "0100")

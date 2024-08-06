@@ -11,12 +11,13 @@ import niku
 import monkeyv
 import village
 import macrossf4
-#import tolove
+import tolove
+import karakuri
 
 st.title("ハイエナボーダーメモ")
 machine = st.selectbox(
     '機種を選択',
-    ('機種を選択','L北斗の拳', '沖ドキGOLD', '絆2天膳', 'ヴァルヴレイヴ', 'チバリヨ2', '番長4', '防振り', 'ToLOVEる', '吉宗RISING',  'Lキン肉マン', "モンキーターンV", "バイオヴィレッジ", "マクロスF4")
+    ('機種を選択','L北斗の拳', '沖ドキGOLD', '絆2天膳', 'ヴァルヴレイヴ', 'チバリヨ2', '番長4', '防振り', '吉宗RISING',  'Lキン肉マン', "モンキーターンV", "バイオヴィレッジ", "マクロスF4")
 )
 
 st.session_state['machine'] = machine
@@ -58,6 +59,8 @@ elif st.session_state['machine'] == "防振り":
     bofuri.bofuri()
 elif st.session_state['machine'] == "ToLOVEる":
     tolove.tolove()
+elif st.session_state['machine'] == "からくりサーカス":
+    karakuri.karakuri()
 else:
     st.header("工事中...")
 

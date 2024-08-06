@@ -97,8 +97,8 @@ def bancho4():
 		elif samai < -2000:
 			t = t + 20
 		
-		with st.container(border=True):
-			tjz(t)
+	with st.container(border=True):
+		tjz(t)
 		
 		
 	st.divider()
