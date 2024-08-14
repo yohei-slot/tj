@@ -1,23 +1,10 @@
 import streamlit as st
-import hokuto
-import okigold
-import tenzen
-import vvv
-import chibariyo2
-import bancho4
-import bofuri
-import yoshimune_rising
-import niku
-import monkeyv
-import village
-import macrossf4
-import tolove
-import karakuri
+import machines
 
 st.title("ハイエナボーダーメモ")
 machine = st.selectbox(
     '機種を選択',
-    ('機種を選択','L北斗の拳', '沖ドキGOLD', '絆2天膳', 'ヴァルヴレイヴ', 'チバリヨ2', '番長4', '防振り', '吉宗RISING',  'Lキン肉マン', "モンキーターンV", "バイオヴィレッジ", "マクロスF4")
+    ('機種を選択','L北斗の拳', '沖ドキGOLD', '絆2天膳', 'ヴァルヴレイヴ', 'チバリヨ2', 'からくりサーカス','Lシンフォギア','L炎炎ノ消防隊','番長4', '防振り', '吉宗RISING',  'Lキン肉マン', "モンキーターンV", "バイオヴィレッジ", "マクロスF4")
 )
 
 st.session_state['machine'] = machine
@@ -34,33 +21,37 @@ def home():
 if st.session_state['machine'] == '機種を選択':
     home()
 elif st.session_state['machine'] == 'L北斗の拳':
-    hokuto.hokuto()
+    machines.hokuto.hokuto()
 elif st.session_state['machine'] == '沖ドキGOLD':
-    okigold.okidoki_gold()
+    machines.okigold.okidoki_gold()
 elif st.session_state['machine'] == '絆2天膳':
-    tenzen.tenzen()
+    machines.tenzen.tenzen()
 elif st.session_state['machine'] == '吉宗RISING':
-    yoshimune_rising.yoshimune_r()
+    machines.yoshimune_rising.yoshimune_r()
 elif st.session_state['machine'] == 'ヴァルヴレイヴ':
-    vvv.vvv()
+    machines.vvv.vvv()
 elif st.session_state['machine'] == 'Lキン肉マン':
-    niku.niku()
+    machines.niku.niku()
 elif st.session_state['machine'] == 'モンキーターンV':
-    monkeyv.monkeyv()
+    machines.monkeyv.monkeyv()
 elif st.session_state['machine'] == "バイオヴィレッジ":
-    village.village()
+    machines.village.village()
 elif st.session_state['machine'] == "マクロスF4":
-    macrossf4.macrossf4()
+    machines.macrossf4.macrossf4()
 elif st.session_state['machine'] == "番長4":
-    bancho4.bancho4()
+    machines.bancho4.bancho4()
 elif st.session_state['machine'] == "チバリヨ2":
-    chibariyo2.chibariyo2()
+    machines.chibariyo2.chibariyo2()
 elif st.session_state['machine'] == "防振り":
-    bofuri.bofuri()
+    machines.bofuri.bofuri()
 elif st.session_state['machine'] == "ToLOVEる":
-    tolove.tolove()
+    machines.tolove.tolove()
 elif st.session_state['machine'] == "からくりサーカス":
-    karakuri.karakuri()
+    machines.karakuri.karakuri()
+elif st.session_state['machine'] == "Lシンフォギア":
+    machines.synpho_seigi.synpho_seigi()
+elif st.session_state['machine'] == 'L炎炎ノ消防隊':
+    machines.Lenen.Lenen()
 else:
     st.header("工事中...")
 
