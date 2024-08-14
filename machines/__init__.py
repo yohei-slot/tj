@@ -12,3 +12,5 @@ from . import tolove
 from . import village
 from . import vvv
 from . import yoshimune_rising
+from . import synpho_seigi
+from . import Lenen
