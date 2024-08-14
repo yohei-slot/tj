@@ -16,8 +16,7 @@ def synpho_seigi():
                 tjz(380)
                 tjz(z1=0,z2=250)
         else:
-            st.write("前回ATの獲得枚数を選択")
-            prev = st.selectbox(["単発（99枚以下）","100~800枚", "800枚以上"])
+            prev = st.selectbox("前回ATの獲得枚数を選択",["単発（99枚以下）","100~800枚", "800枚以上"])
             if prev == "単発（99枚以下）" or prev == "100~800枚":
                 prevg_280 = st.checkbox("前回AT当選G数が280G以上の場合チェック", value=True)
             
