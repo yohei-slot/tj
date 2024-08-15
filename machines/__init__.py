@@ -15,3 +15,4 @@ from . import yoshimune_rising
 from . import synpho_seigi
 from . import Lenen
 from . import muso
+from . import otome4

@@ -54,6 +54,8 @@ elif st.session_state['machine'] == 'L炎炎ノ消防隊':
     machines.Lenen.Lenen()
 elif st.session_state['machine'] == "L北斗無双":
     machines.muso.muso()
+elif st.session_state['machine'] == "戦国乙女4":
+    machines.otome4.otome4()
 else:
     st.header("工事中...")
 
