@@ -4,7 +4,7 @@ import machines
 st.title("ハイエナボーダーメモ")
 machine = st.selectbox(
     '機種を選択',
-    ('機種を選択','L北斗の拳', '沖ドキGOLD', '絆2天膳', 'ヴァルヴレイヴ', 'チバリヨ2', 'からくりサーカス','Lシンフォギア','L炎炎ノ消防隊','番長4', '防振り', '吉宗RISING',  'Lキン肉マン', "モンキーターンV", "バイオヴィレッジ", "マクロスF4")
+    ('機種を選択','L北斗の拳', 'ヴァルヴレイヴ', 'チバリヨ2', 'L北斗無双','からくりサーカス','Lシンフォギア','L炎炎ノ消防隊', '絆2天膳','沖ドキGOLD','番長4', '防振り', '吉宗RISING',  'Lキン肉マン', "モンキーターンV", "バイオヴィレッジ", "マクロスF4")
 )
 
 st.session_state['machine'] = machine
@@ -52,6 +52,8 @@ elif st.session_state['machine'] == "Lシンフォギア":
     machines.synpho_seigi.synpho_seigi()
 elif st.session_state['machine'] == 'L炎炎ノ消防隊':
     machines.Lenen.Lenen()
+elif st.session_state['machine'] == "L北斗無双":
+    machines.muso.muso()
 else:
     st.header("工事中...")
 
